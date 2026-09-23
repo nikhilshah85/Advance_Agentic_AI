@@ -1,0 +1,44 @@
+{
+  "hallucination": {
+    "likelihood": "Medium",
+    "impact": "High (wrong price or policy damages customer trust)",
+    "detection": "Faithfulness score < 0.85 in rolling evaluation; Langfuse alert",
+    "mitigation": "RAG context grounding; faithfulness gate in eval pipeline; human review for score < 0.70",
+    "owner": "ML Platform Team"
+  },
+  "prompt_injection": {
+    "likelihood": "Medium (retail context reduces incentive)",
+    "impact": "High (system prompt leak, off-topic responses)",
+    "detection": "Output monitoring for instruction-following violations; red-team monthly",
+    "mitigation": "System prompt hardening (from IN08); input sanitisation; output format validation",
+    "owner": "Security Team"
+  },
+  "pii_leakage": {
+    "likelihood": "Low (order IDs are not sensitive PII)",
+    "impact": "Critical if personal data (name, address) logged",
+    "detection": "Log scanning with PII regex; Langfuse data masking",
+    "mitigation": "Never log full query in production; hash or truncate; GDPR audit annually",
+    "owner": "Data Governance Team"
+  },
+  "model_drift": {
+    "likelihood": "Low (model versions are pinned)",
+    "impact": "High (silent quality degradation over weeks)",
+    "detection": "Weekly automated benchmark run (IN11); Langfuse rolling score trend",
+    "mitigation": "Pin model version; weekly regression gate; alert on 7-day rolling faithfulness drop > 0.05",
+    "owner": "ML Platform Team"
+  },
+  "cost_overrun": {
+    "likelihood": "Medium (traffic spikes on promotions)",
+    "impact": "High (budget exhausted mid-month)",
+    "detection": "Daily spend alert at 70% and 85% of budget (BudgetGovernor from IN14)",
+    "mitigation": "Hard cap with fallback responses; auto-scaling to cheaper model under load",
+    "owner": "Engineering Manager"
+  },
+  "dependency_failure": {
+    "likelihood": "Low (OpenAI SLA 99.9%; Pinecone SLA 99.9%)",
+    "impact": "Critical (full service outage)",
+    "detection": "Health check endpoint; span error rate > 0% triggers alert",
+    "mitigation": "Circuit breaker (from IN07); fallback to cached responses; secondary model endpoint",
+    "owner": "ML Platform Team"
+  }
+}

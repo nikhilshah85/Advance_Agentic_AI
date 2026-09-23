@@ -1,0 +1,37 @@
+ADR-001: Use RAG + Agent (LangGraph) for Walmart Retail Assistant
+================================================================
+Date   : 2026-07-23
+Status : Accepted
+Deciders: ML Platform Team, Engineering Manager, Principal Architect
+
+CONTEXT
+  The Walmart Retail Assistant must handle multi-intent queries requiring
+  sequential tool calls (price lookup -> inventory -> policy retrieval).
+  Simple prompt-completion cannot maintain state across steps.
+  Customer satisfaction requires accurate answers to complex queries.
+
+DECISION
+  Use LangGraph Supervisor + Worker pattern.
+  Supervisor routes to: price_agent, order_agent, policy_agent, hours_agent.
+  State managed via TypedDict shared across all nodes.
+
+OPTIONS CONSIDERED
+  RAG + Agent (LangGraph) -- Chosen
+    Pros: Native graph state, conditional routing, highest quality (score 5/5)
+    Cons: Higher learning curve; framework dependency
+
+  RAG + Deterministic Workflow
+    Pros: Simpler, more maintainable (5/5); lower cost
+    Cons: Cannot handle multi-intent or conditional branching
+
+  Traditional Search API
+    Pros: Cheapest; fastest; most maintainable
+    Cons: Cannot answer natural language queries or comparisons (quality 2/5)
+
+CONSEQUENCES
+  Positive : Multi-step queries handled natively; extensible to new worker nodes
+  Negative : Team must learn LangGraph; upgrade risk on breaking changes
+  Risks    : LangGraph API changes between minor versions
+  Mitigation: Pin version; integration tests run on every dependency update
+
+REVIEW DATE: 2027-01-01 or when LangGraph v2.0 is released

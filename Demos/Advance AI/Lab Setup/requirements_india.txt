@@ -1,0 +1,58 @@
+# ============================================================
+# Advanced Agentic AI: Production Engineering  —  India Track
+# Walmart Global Tech Academy  |  requirements.txt
+#
+# Install with:
+#   pip install -r requirements.txt
+#
+# Covers: Days 1-5  (Notebooks IN01-IN17 + ARB Capstone)
+# Python: 3.10, 3.11, or 3.12  (3.13 not yet supported)
+# ============================================================
+
+# Core OpenAI SDK
+openai>=1.30.0
+tiktoken>=0.7.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# LangChain ecosystem (Days 1-5)
+langchain>=0.2.16
+langchain-core>=0.2.38
+langchain-openai>=0.1.22
+langchain-community>=0.2.16
+
+# LangGraph - stateful agent framework (Days 2-5)
+langgraph>=0.2.0
+
+# Vector stores - Module 1 comparison lab
+chromadb>=0.5.0          # Local vector store  (Chroma  — lab primary)
+faiss-cpu>=1.7.4         # Local vector store  (FAISS   — no persistence)
+pinecone-client>=3.2.0   # Managed vector store (Pinecone — comparison demo)
+
+# Fine-tuning frameworks - Module 1 decision lab
+# NOTE: actual LoRA / QLoRA fine-tuning runs in the GPU-enabled Cloud Lab
+#       These packages are required for the conceptual comparison notebook (IN01)
+transformers>=4.40.0
+peft>=0.11.0
+accelerate>=0.30.0
+datasets>=2.20.0
+
+# Evaluation metrics - Module 4 (IN10, IN11)
+rouge-score>=0.1.2       # ROUGE-L computation
+nltk>=3.8.1              # BLEU score computation
+scikit-learn>=1.4.0      # Cosine similarity, metric utilities
+
+# Observability - Module 4 (IN12)
+langfuse>=2.0.0          # Tracing, evaluation dashboard
+
+# Utilities
+pydantic>=2.7.0
+numpy>=1.26.0
+rich>=13.7.0
+requests>=2.31.0
+
+# Jupyter environment
+jupyter>=1.0.0
+ipykernel>=6.29.0
+notebook>=7.2.0

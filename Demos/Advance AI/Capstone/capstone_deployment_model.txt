@@ -1,0 +1,47 @@
+CAPSTONE DEPLOYMENT MODEL -- Walmart Retail Assistant
+=====================================================
+Date: 2026-07-23
+
+1. CHANGE TYPES AND PIPELINE PATHS
+   System prompt change   : PR -> eval gate -> staging -> canary 5% -> prod
+   Model version change   : PR -> full regression (IN11) -> staging -> canary 10% -> prod
+   RAG config change      : PR -> retrieval eval (hit rate, MRR) -> staging -> prod
+   Tool logic change      : PR -> unit tests + tool_call_accuracy eval -> staging -> prod
+
+2. PRE-DEPLOYMENT GATE (ALL MUST PASS)
+   Faithfulness       >= 0.85
+   Answer relevancy   >= 0.75
+   Toxicity           < 0.10
+   Hit rate @ 3       >= 0.75
+   Task success rate  >= 0.90
+   Tool call accuracy >= 0.95
+   P95 latency        < 3000ms (measured on staging under load)
+
+3. DEPLOYMENT STEPS
+   Step 1: Deploy to staging. Run full golden dataset evaluation.
+   Step 2: Canary to 5% production traffic. Monitor Langfuse for 30 minutes.
+   Step 3: If no regressions: promote to 25%, then 100% over 2 hours.
+   Step 4: Monitor for 24 hours post-deployment.
+
+4. ROLLBACK TRIGGER CONDITIONS
+   Any metric drops below threshold in rolling 1-hour window
+   P95 latency exceeds 3000ms for 3 consecutive minutes
+   Error rate exceeds 2% for 5 consecutive minutes
+   Daily spend exceeds $60 (120% of expected daily budget)
+
+5. ROLLBACK STEPS (target: < 30 minutes)
+   T+0:  On-call engineer declares rollback
+   T+5:  Route 100% traffic to previous version (feature flag flip)
+   T+10: Confirm Langfuse metrics returning to baseline
+   T+20: Notify stakeholders; open post-incident review ticket
+   T+30: Rollback complete; production stable on previous version
+
+6. ON-CALL RUNBOOK SUMMARY
+   Who  : ML Platform on-call (PagerDuty rotation)
+   Check: Langfuse dashboard (quality), Grafana (latency/cost), error logs
+   First 5 actions:
+     1. Open Langfuse trace explorer, filter last 30 minutes
+     2. Check latency distribution -- is P99 spiking?
+     3. Check faithfulness score -- any drop from baseline?
+     4. Check error rate -- are any spans returning error status?
+     5. If any SLO breached: execute rollback procedure above
