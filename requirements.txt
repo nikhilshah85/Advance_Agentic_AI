@@ -1,0 +1,59 @@
+# ============================================================
+# Advanced Agentic AI: Production Engineering
+# Walmart Global Tech Academy | requirements.txt
+#
+# Covers: Days 1-5 (Notebooks IN01-IN17 + ARB Capstone)
+# Python: 3.10, 3.11, or 3.12
+# ============================================================
+
+# Core OpenAI SDK
+openai>=1.30.0
+tiktoken>=0.7.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# LangChain ecosystem
+langchain>=0.2.16
+langchain-core>=0.2.38
+langchain-openai>=0.1.22
+langchain-community>=0.2.16
+
+# LangGraph
+langgraph>=0.2.0
+
+# Vector stores
+chromadb>=0.5.0
+faiss-cpu>=1.7.4
+pinecone-client>=3.2.0
+
+# Fine-tuning frameworks
+transformers>=4.40.0
+peft>=0.11.0
+accelerate>=0.30.0
+datasets>=2.20.0
+
+# Evaluation metrics
+rouge-score>=0.1.2
+nltk>=3.8.1
+scikit-learn>=1.4.0
+
+# Observability
+langfuse>=2.0.0
+
+# Utilities
+pydantic>=2.7.0
+numpy>=1.26.0
+rich>=13.7.0
+requests>=2.31.0
+pypdf
+
+# Network & Infrastructure Engineering
+mcp>=1.0.0
+pandas>=2.2.0
+PyYAML>=6.0.1
+
+# Jupyter environment
+jupyter>=1.0.0
+ipykernel>=6.29.0
+notebook>=7.2.0

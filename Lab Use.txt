@@ -1,0 +1,27 @@
+1. For running your code, 
+	lab has an environment setup as - venv - which has all the python packages installed in it 
+	
+2. Clone all the code/books shared by Dr.Darshan in a folder "Advanced Agentic AI" - on Desktop
+
+3. Visual Studio Code is already Installed
+
+4. From visual studio code, open folder "Advanced Agentic AI", allow any permissions if asked by vscode and
+	install the plugins if suggested
+
+5. Check the .env file in the folder, this is where you need to copy the api keys
+	OPENAI_API_KEY = "already shared in the excel file in an email along with credentials"
+	other keys, will be created during the training session live
+
+6. To test and Run the code
+	a. open the code file (.ipynb)
+	b. select the kernet on top right of the book, click select kernel -> select python -> select venv
+install and allow if vs ask for any plugins
+
+7.  This is a python notebook, it has detailed explanation of the topic, case studies, and requirements, please read this carefully
+
+8. Below the explanation, you will find code block which is an implementation of theory explained above, you can click on an triangle on top left of the block to execute the block
+
+9. You can click on Runall, on top of the book on VS Code which will execute all the blocks in the book
+
+10. use clear output to reset all the executed code blocks
+
