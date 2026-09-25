@@ -1,0 +1,170 @@
+[
+  {
+    "country": "India",
+    "capital": "New Delhi",
+    "currency": "Indian Rupee (INR)",
+    "timezone": "IST (UTC+5:30)",
+    "population": "1.43 Billion",
+    "language": "Hindi, English",
+    "places_to_visit": [
+      "Taj Mahal",
+      "Jaipur",
+      "Kerala Backwaters",
+      "Goa",
+      "Varanasi"
+    ],
+    "common_slangs": [
+      "Jugaad - creative solution",
+      "Timepass - something done to pass time",
+      "Yaar - friend/buddy",
+      "Scene kya hai? - what's the plan?"
+    ]
+  },
+  {
+    "country": "United States",
+    "capital": "Washington D.C.",
+    "currency": "US Dollar (USD)",
+    "timezone": "Multiple Time Zones",
+    "population": "340 Million",
+    "language": "English",
+    "places_to_visit": [
+      "New York City",
+      "Grand Canyon",
+      "Las Vegas",
+      "Yellowstone",
+      "Hawaii"
+    ],
+    "common_slangs": [
+      "Cool - great",
+      "Hang out - spend time together",
+      "No worries - it's okay",
+      "Awesome - excellent"
+    ]
+  },
+  {
+    "country": "United Kingdom",
+    "capital": "London",
+    "currency": "Pound Sterling (GBP)",
+    "timezone": "GMT/BST",
+    "population": "68 Million",
+    "language": "English",
+    "places_to_visit": [
+      "London Eye",
+      "Stonehenge",
+      "Edinburgh",
+      "Lake District",
+      "Oxford"
+    ],
+    "common_slangs": [
+      "Mate - friend",
+      "Cheers - thanks",
+      "Knackered - tired",
+      "Fancy - want/like"
+    ]
+  },
+  {
+    "country": "Japan",
+    "capital": "Tokyo",
+    "currency": "Japanese Yen (JPY)",
+    "timezone": "JST (UTC+9)",
+    "population": "124 Million",
+    "language": "Japanese",
+    "places_to_visit": [
+      "Mount Fuji",
+      "Kyoto",
+      "Osaka",
+      "Hiroshima",
+      "Tokyo Skytree"
+    ],
+    "common_slangs": [
+      "Yabai - awesome/crazy",
+      "Maji - seriously?",
+      "Sugoi - amazing",
+      "Wakamonogo - young people slang"
+    ]
+  },
+  {
+    "country": "Germany",
+    "capital": "Berlin",
+    "currency": "Euro (EUR)",
+    "timezone": "CET/CEST",
+    "population": "84 Million",
+    "language": "German",
+    "places_to_visit": [
+      "Berlin Wall",
+      "Munich",
+      "Black Forest",
+      "Cologne Cathedral",
+      "Neuschwanstein Castle"
+    ],
+    "common_slangs": [
+      "Geil - cool",
+      "Na? - how are you?",
+      "Krass - crazy",
+      "Alter - dude"
+    ]
+  },
+  {
+    "country": "Australia",
+    "capital": "Canberra",
+    "currency": "Australian Dollar (AUD)",
+    "timezone": "Multiple Time Zones",
+    "population": "27 Million",
+    "language": "English",
+    "places_to_visit": [
+      "Sydney Opera House",
+      "Great Barrier Reef",
+      "Melbourne",
+      "Uluru",
+      "Gold Coast"
+    ],
+    "common_slangs": [
+      "Mate - friend",
+      "Arvo - afternoon",
+      "Brekkie - breakfast",
+      "No worries - okay"
+    ]
+  },
+  {
+    "country": "Canada",
+    "capital": "Ottawa",
+    "currency": "Canadian Dollar (CAD)",
+    "timezone": "Multiple Time Zones",
+    "population": "41 Million",
+    "language": "English, French",
+    "places_to_visit": [
+      "Niagara Falls",
+      "Banff National Park",
+      "Toronto",
+      "Vancouver",
+      "Quebec City"
+    ],
+    "common_slangs": [
+      "Eh? - seeking agreement",
+      "Toque - winter hat",
+      "Loonie - one-dollar coin",
+      "Double-double - coffee with cream and sugar"
+    ]
+  },
+  {
+    "country": "Brazil",
+    "capital": "Brasilia",
+    "currency": "Brazilian Real (BRL)",
+    "timezone": "Multiple Time Zones",
+    "population": "216 Million",
+    "language": "Portuguese",
+    "places_to_visit": [
+      "Rio de Janeiro",
+      "Christ the Redeemer",
+      "Amazon Rainforest",
+      "Iguazu Falls",
+      "Salvador"
+    ],
+    "common_slangs": [
+      "Legal - cool",
+      "Cara - dude",
+      "Beleza - alright",
+      "Valeu - thanks"
+    ]
+  }
+]

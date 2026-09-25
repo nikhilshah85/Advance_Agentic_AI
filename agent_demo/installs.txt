@@ -1,0 +1,8 @@
+pip install openai langchain langchain-openai langchain-community chromadb python-dotenv
+
+openai
+langchain
+langchain-openai
+langchain-community
+chromadb
+python-dotenv
